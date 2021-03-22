@@ -1,0 +1,9 @@
+package com.project.community.board;
+
+import org.springframework.stereotype.Controller;
+
+@RequestMapping("/board")
+@Controller
+public class BoardController {
+
+}

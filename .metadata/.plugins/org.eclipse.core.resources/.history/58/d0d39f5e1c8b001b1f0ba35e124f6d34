@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<header class="header-container">
+    <div class="header-title">
+    	커뮤니티
+    </div>
+    <div class="header-items">
+      <ul>
+        <li>축구</li>
+        <li>연예</li>
+        <li>게임</li>
+        <li>야구</li>
+      </ul>
+      <div class="header-personal">
+      	<a href="/user/login">
+        	<div>로그인</div>
+        </a>
+        <div>회원가입</div>
+      </div>
+    </div>
+</header>
