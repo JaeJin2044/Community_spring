@@ -1,0 +1,5 @@
+package com.project.community.utils;
+
+public class FileUtils {
+
+}

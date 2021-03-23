@@ -1,0 +1,19 @@
+.container{
+	width:600px;
+}
+.container h2{
+	margin : 20px;
+	color: black;
+	font-size : 18px;
+	font-weight: 700;
+	text-align: center;
+}
+.table table-boardered th {
+	vertical-align: middle;
+    text-align: center;
+}
+
+.joinBtn-items{
+	text-align: center;
+	padding-right: 15px;
+}

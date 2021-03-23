@@ -1,0 +1,19 @@
+/* login form */
+.container{
+  width: 1000px;
+  position: relative;
+  top: 10px;
+  left: 200px;
+}
+.page-header{
+  padding-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+.container .form-group{
+  padding-bottom: 5px;
+}
+.container label{
+  padding-bottom: 15px;
+} 

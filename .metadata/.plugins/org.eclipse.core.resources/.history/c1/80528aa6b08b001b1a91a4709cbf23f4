@@ -1,0 +1,6 @@
+package com.project.community.domain;
+
+@Alias("UserDTO")
+public class UserDTO extends UserVO{
+
+}

@@ -1,0 +1,15 @@
+package com.project.community.user;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RequestMapping("/userAjax")
+@RestController
+public class UserAjaxController {
+
+	@PostMapping
+	public int join(UserVO vo) {
+		
+	}
+}

@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+ <section class="container">
+    <h2>회원가입</h2>
+    <form action="MemberJoinProc.jsp" method="post">
+        <table class="table table-boardered">
+            <tr>
+                <th>아이디</th>
+                <td><input type="text" class="form-control" name="id" placeholder="id를 넣으세요"></td>
+                <button></button>
+            </tr>
+            <tr>
+                <th>패스워드</th>
+                <td><input type="password" class="form-control" name="pass1" placeholder="비밀번호는 영문만 넣어주세요"></td>      
+            </tr>
+             
+            <tr>
+                <th>패스워드확인</th>
+                <td><input type="password" class="form-control" name="pass2"></td>        
+            </tr>
+             
+            <tr>
+                <th>이메일</th>
+                <td><input type="email" class="form-control" name="email"></td>       
+            </tr>
+             
+            <tr>
+                <th>전화번호</th>
+                <td><input type="tel" class="form-control" name="tel"></td>       
+            </tr>             
+            <tr>
+                <th>성별</th>
+                <td>
+                <input type="radio"  name="age" value="10">MAN &nbsp;&nbsp;
+                <input type="radio"  name="age" value="20">WOMAN &nbsp;&nbsp;
+                </td>     
+            </tr>
+            <tr>
+                <td colspan="2" class="joinBtn-items">
+                <input type="submit" class="btn btn-primary" value="전송">
+                <input type="reset" class="btn btn-danger" value="취소">
+                </td>
+            </tr>
+             
+             
+        </table>
+    </form>
+</section>

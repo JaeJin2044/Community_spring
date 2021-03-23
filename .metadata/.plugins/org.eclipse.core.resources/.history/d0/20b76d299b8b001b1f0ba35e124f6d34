@@ -1,0 +1,23 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("UserVO")
+public class UserVO {
+	u_pk int unsigned primary key auto_increment,
+	u_name varchar(10) not null,
+	u_pw varchar(300) not null,
+	u_email varchar(50) not null,
+	u_regdate datetime default current_timestamp,
+	u_profileImg varchar(300),
+	u_phone varchar(40) not null
+	
+	
+	private int u_pk;
+	private String u_name;
+	private String u_pw;
+	private String u_email;
+	private String regdate;
+	private String u_profileImg;
+	private String u_phone;
+}

@@ -1,0 +1,58 @@
+package com.project.community.user;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.project.community.domain.UserVO;
+import com.project.community.utils.SecurityUtils;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	private UserMapper mapper;
+	
+	@Autowired
+	private SecurityUtils sUtils;
+
+	
+	public int join(UserVO vo , MultipartFile mf) {
+		String salt = sUtils.getSalt();
+		String hashPw = sUtils.getHashPw(vo.getU_pw(), salt);
+		
+		vo.setU_pw(hashPw);
+		
+		
+		if(mf==null) {
+			vo.setU_profileImg(null);
+			int result = mapper.insUser(p);
+			insPointHistory(p.getUserPk(), p.getUserPoint());
+			return result;
+		} else {
+			//profileImg DB에 저장하기 위해 하는부분
+			String profileImg = fUtils.getRandomFileNm(mf.getOriginalFilename());
+			
+			p.setProfileImg(profileImg);
+			
+			int result = mapper.insUser(p);
+			
+			int userPk = p.getUserPk();
+			try {
+				String folder = "/res/img/user/" + userPk;
+				String basePath = fUtils.getBasePath(folder);
+				fUtils.makeFolders(basePath);
+				File file = new File(basePath, profileImg);
+				mf.transferTo(file);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}			
+			insPointHistory(p.getUserPk(), p.getUserPoint());
+			return result;
+		}
+		
+		
+		
+		return 0;
+	}
+}

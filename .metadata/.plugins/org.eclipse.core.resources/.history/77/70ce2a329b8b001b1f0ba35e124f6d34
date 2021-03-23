@@ -1,0 +1,14 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("UserVO")
+public class UserVO {
+	private int u_pk;
+	private String u_name;
+	private String u_pw;
+	private String u_email;
+	private String regdate;
+	private String u_profileImg;
+	private String u_phone;
+}

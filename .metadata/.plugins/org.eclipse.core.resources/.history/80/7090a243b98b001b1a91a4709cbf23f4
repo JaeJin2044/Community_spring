@@ -1,0 +1,3 @@
+
+let idEl = document.querySelector('#u_id');
+let pwEl = document.querySelector('#u_pw');

@@ -31,6 +31,7 @@
 	</beans:bean>	
 	
 	<context:component-scan base-package="com.project.community" />
+	<mybatis-spring:scan base-package="com.project.community"/>
 	
 	<beans:bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<beans:property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>				
@@ -61,6 +62,12 @@
 		<beans:property name="preparerFactoryClass" 
 			value="org.springframework.web.servlet.view.tiles3.SpringBeanPreparerFactory"/>
 	</beans:bean>
+	
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"></beans:property>
+	</beans:bean>
+	
 	
 	
 </beans:beans>

@@ -1,0 +1,24 @@
+
+let loginBtnEl = document.querySelector('#loginBtn');
+let idEl = document.querySelector('#u_id');
+let pwEl = document.querySelector('#u_pw');
+
+if(loginBtnEl){
+	
+	function loginAjax(){
+		var param = {
+			u_id : idEl.value,
+			u_pw : pwEl.value
+		}
+		
+		fetch('/userAjax/login',{
+			
+			
+		})
+	}
+	
+	
+	
+	
+	loginBtnEl.addEventListener('click',loginAjax);
+}

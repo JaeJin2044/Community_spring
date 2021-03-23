@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     
 <header class="header-container">
     <div class="header-title">
-    	커뮤니티
+    	<a href="/board/list">커뮤니티</a>
     </div>
     <div class="header-items">
       <ul>
@@ -13,12 +14,37 @@
         <li>야구</li>
       </ul>
       <div class="header-personal">
-        <div>
-        	<a href="/user/login">로그인 </a>
-        </div>
-        <div>
-        	<a href="/user/join">회원가입</a>
-        </div>
+      	<c:choose>
+			<c:when test="${loginUser.u_profileImg == null}">
+				<c:set var="src" value="profile.jpg" />
+			</c:when>
+			<c:otherwise>
+				<c:set var="src"
+					value="user/${loginUser.u_pk}/${loginUser.u_profileImg}" />
+			</c:otherwise>
+		</c:choose>
+		
+     	<c:choose>
+     		<c:when test="${loginUser != null}">
+		        <div>
+		        	<a href="/user/logout">로그아웃 </a>
+		        </div>
+		        <div class="profile-items">
+		        	<span><img src="/res/img/${src}" id="profileImg" /></span>
+		        	${loginUser.u_name}
+		        </div>
+        	</c:when>
+        		<c:when test="${loginUser == null}">
+		        <div>
+		        	<a href="/user/login">로그인 </a>
+		        </div>
+		        <div>
+		        	<a href="/user/join">회원가입</a>
+		        </div>
+        	</c:when>
+        </c:choose>
       </div>
     </div>
 </header>
+
+

@@ -1,0 +1,2 @@
+
+let idEl = document.querySelector('#u_id');

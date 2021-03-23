@@ -1,0 +1,10 @@
+.container{
+	justify-content: center;
+	width:500px;
+}
+.container h2{
+	color: black;
+	font-size : 18px;
+	font-weight: 700;
+	text-align: center;
+}
