@@ -15,7 +15,7 @@
  			<when test="u_id != null and u_id != ''">
 		 		WHERE u_id = #{u_id} 			
  			</when>
- 			<when test="u_pk != null and u_pk != ''">
+ 			<when test="u_pk > 0 ">
  				WHERE u_pk = #{u_pk}
  			</when>
  		</choose>

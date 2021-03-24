@@ -1,0 +1,10 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("BoardDTO")
+public class BoardDTO extends BoardVO {
+	
+	private String u_profileImg;
+	private String u_name;
+}

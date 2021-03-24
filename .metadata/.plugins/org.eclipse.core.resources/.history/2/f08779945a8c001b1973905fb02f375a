@@ -1,0 +1,12 @@
+
+
+
+let logOutBtnEl = document.querySelector("#logOutBtn");
+
+if(logOutBtnEl){
+	
+	
+	
+	header_joinBtnEl.addEventListener('click',)
+}
+

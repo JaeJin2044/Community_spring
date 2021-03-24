@@ -1,0 +1,12 @@
+package com.project.community.board;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.project.community.domain.BoardVO;
+
+@Mapper
+public interface BoardMapper {
+	
+	int insBoard(BoardVO vo);
+
+}

@@ -12,6 +12,7 @@
 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="/res/css/header.css">
 <link rel="stylesheet" href="<tiles:getAsString name="categoryCss"/>">
+<script defer src="/res/js/header.js"></script>
 <script defer src="<tiles:getAsString name="categoryJs"/>"></script>
 </head>
 <body>

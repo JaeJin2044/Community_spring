@@ -1,0 +1,9 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("Criteria")
+public class Criteria {
+
+	private String b_category;
+}

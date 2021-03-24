@@ -8,10 +8,10 @@
     </div>
     <div class="header-items">
       <ul>
-        <li>축구</li>
-        <li>연예</li>
-        <li>게임</li>
-        <li>야구</li>
+        <li><a href="/board/list?b_category=1">축구</a></li>
+        <li><a href="/board/list?b_category=2">연예</a></li>
+        <li><a href="/board/list?b_category=3">게임</a></li>
+        <li><a href="/board/list?b_category=4">야구</a></li>
       </ul>
       <div class="header-personal">
       	<c:choose>
@@ -27,7 +27,7 @@
      	<c:choose>
      		<c:when test="${loginUser != null}">
 		        <div>
-		        	<a href="/user/logout">로그아웃 </a>
+		        	<a href="/user/logout" id="logOutBtn">로그아웃 </a>
 		        </div>
 		        <div class="profile-items">
 		        	<span><img src="/res/img/${src}" id="profileImg" /></span>
@@ -39,7 +39,7 @@
 		        	<a href="/user/login">로그인 </a>
 		        </div>
 		        <div>
-		        	<a href="/user/join">회원가입</a>
+		        	<a href="/user/join" >회원가입</a>
 		        </div>
         	</c:when>
         </c:choose>

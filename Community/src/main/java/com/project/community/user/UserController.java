@@ -33,7 +33,6 @@ public class UserController {
 	@GetMapping("/logout")
 	public String logout() {
 		hs.invalidate();
-		
 		return "redirect:/board/list";
 	}
 	

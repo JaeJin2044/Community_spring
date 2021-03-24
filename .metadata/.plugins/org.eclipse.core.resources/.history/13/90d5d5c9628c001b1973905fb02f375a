@@ -1,0 +1,52 @@
+package com.project.community.board;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.project.community.domain.BoardVO;
+
+@RequestMapping("/board")
+@Controller
+public class BoardController {
+	
+	@GetMapping("/list")
+	public void list() {
+		
+		
+	}
+	@GetMapping("/detail")
+	public void detail() {
+		
+	}
+	@GetMapping("/write")
+	public void write() {}
+	
+	@PostMapping("/write")
+	public String write(BoardVO vo) {
+		System.out.println("writer ="+vo.getB_writer());
+		System.out.println("u_pk ="+vo.getU_pk());
+		System.out.println("b_Title ="+vo.getB_title());
+		return "redirect: /board/list";
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

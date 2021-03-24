@@ -1,0 +1,63 @@
+package com.project.community.board;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.project.community.Const;
+import com.project.community.domain.BoardDTO;
+import com.project.community.domain.BoardVO;
+import com.project.community.domain.Criteria;
+
+@RequestMapping("/board")
+@Controller
+public class BoardController {
+	
+	@Autowired
+	private BoardService service;
+	
+	@GetMapping("/list")
+	public String list(Criteria cri,Model model) {
+		System.out.println(cri.getB_category());
+		List<BoardDTO> list = service.selBoardList(cri);
+		model.addAttribute(Const.KEY_LIST, list);
+		return "/board/list?m_category="+cri.getB_category();
+	}
+	
+	@GetMapping("/detail")
+	public void detail() {
+		
+	}
+	@GetMapping("/write")
+	public void write() {}
+	
+	@PostMapping("/write")
+	public String write(BoardVO vo) {
+		service.insBoard(vo);
+		return "redirect: /board/list?b_category="+vo.getB_category();
+	}
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

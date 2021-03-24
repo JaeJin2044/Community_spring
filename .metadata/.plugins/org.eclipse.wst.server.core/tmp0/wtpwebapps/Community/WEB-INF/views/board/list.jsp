@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <section>
 	<table class="table table-hover">
 		<thead>
@@ -13,27 +13,31 @@
 			</tr>
 		</thead>
 		<tbody>
+			<c:forEach var="item" items="${list}">
 			<tr>
-				<td>1</td>
-				<td>어쩜좋아요?</td>
-				<td>소녀시대</td>
-				<td>10월 5일</td>
-				<td>1</td>
+				<td>${item.b_seq}</td>
+				<td><a href="/board/detail?b_pk=${item.b_pk}">${item.b_title}</a></td>
+				<td>
+				<c:choose>
+					<c:when test="${item.u_profileImg == null}">
+						<c:set var="src" value="profile.jpg" />
+					</c:when>
+					<c:otherwise>
+						<c:set var="src"
+							value="user/${item.u_pk}/${item.u_profileImg}" />
+					</c:otherwise>
+				</c:choose>
+				<span><img src="/res/img/${src}" id="userImg">${item.b_writer}</span>
+				</td>
+				<td>${item.b_regdate}</td>
+				<td>${item.b_hitcounts}</td>
 			</tr>
-			<tr>
-				<td>1</td>
-				<td>어쩜좋아요?</td>
-				<td>소녀시대</td>
-				<td>10월 5일</td>
-				<td>1</td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>어쩜좋아요?</td>
-				<td>소녀시대</td>
-				<td>10월 5일</td>
-				<td>1</td>
-			</tr>
+			</c:forEach>
 		</tbody>
 	</table>
+	<c:if test="${param.b_category != null && loginUser.u_pk > 0 }">
+		<a href="/board/write?b_category=${param.b_category}" class="btn btn-primary" style="float:right;">
+		글쓰기
+		</a>
+	</c:if>
 </section>

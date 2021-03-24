@@ -1,0 +1,15 @@
+
+
+
+let logOutBtnEl = document.querySelector("#logOutBtn");
+
+if(logOutBtnEl){
+	
+	
+	logOutBtnEl.addEventListener('click',function(e){
+		e.preventDefault();
+		alert('e.preventDefault()');
+	})
+	
+}
+

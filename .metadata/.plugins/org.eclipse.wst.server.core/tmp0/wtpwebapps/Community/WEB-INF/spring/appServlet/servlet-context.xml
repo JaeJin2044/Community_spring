@@ -47,7 +47,7 @@
 	
     <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource"/>
-        <beans:property name="typeAliasesPackage" value="com.koreait.community"/>        
+        <beans:property name="typeAliasesPackage" value="com.project.community"/>        
     </beans:bean>
 	<mybatis-spring:scan base-package="com.porject.community"/>
 	

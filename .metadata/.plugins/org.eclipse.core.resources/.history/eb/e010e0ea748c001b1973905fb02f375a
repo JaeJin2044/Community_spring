@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    
+
+<section>
+	<article>
+		<div class="container" role="main">
+			<form name="form" id="form" role="form" method="post"
+				action="/board/write">
+				<div class="mb-3">
+					<label for="title">제목</label>
+					 <input type="text" class="form-control" name="b_title"
+						value="${data.b_title}">
+				</div>
+	
+				<div class="mb-3">
+					<label for="reg_id">작성자</label>
+					<input type="text" class="form-control" name="b_writer" id="reg_id"
+						value="${data.b_writer}" readonly >
+				</div>
+				<div class="mb-3">
+					<label for="reg_id">등록일자</label>
+					<input type="text" class="form-control" name="b_regdate" id="reg_id"
+						value="${data.b_regdate}" readonly >
+				</div>
+				<div class="mb-3">
+					<label for="content">내용</label>
+					<textarea class="form-control" rows="5" name="b_content" id="content">
+						${data.b_content}
+					</textarea>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-sm btn-primary" id="writeBtn">글 수정</button>
+					<button type="submit" class="btn btn-sm btn-primary" id="writeBtn">글 삭제</button>
+					<a href="/board/list?b_category=${data.b_category}" class="btn btn-sm btn-primary">리스트</a>
+				</div>
+			</form>
+		</div>
+	</article>
+</section>

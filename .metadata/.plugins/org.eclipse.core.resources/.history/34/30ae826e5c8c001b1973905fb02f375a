@@ -1,0 +1,9 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("BoardVO")
+public class BoardVO {
+	
+
+}

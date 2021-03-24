@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.community.board.BoardMapper">
+
+	<insert id="insBoard">
+		insert into t_board 
+		(b_title,b_content,b_seq,b_category,b_writer,u_pk)
+		select #{b_title},#{b_content},IFNULL(MAX(b_seq),0)+1, #{b_category}, #{b_writer}, #{u_pk}
+		from t_board 
+		where b_category = #{b_category}
+	</insert>	
+	
+	<select id="selBoardList" resultType="BoardDTO">
+	select A.b_seq ,A.b_title ,DATE_FORMAT(A.b_regdate , '%y.%m.%d'),A.b_hitcounts,B.u_name as b_writer,B.u_profileImg 
+	from  
+	t_board A
+	inner join t_user B
+	on A.u_pk = B.u_pk
+	where b_category = #{b.category}
+	</select>
+	
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+

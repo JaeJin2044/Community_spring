@@ -1,0 +1,22 @@
+package com.project.community.board;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.community.domain.BoardVO;
+
+@Service
+public class BoardService {
+	
+	@Autowired
+	private BoardMapper mapper;
+	
+	public int insBoard(BoardVO vo) {
+		return mapper.insBoard(vo);
+	}
+	
+	public List<BoardDTO> selBoardList(BoardDTO dto){
+		return mapper.selBoardList(dto);
+	}
+
+}
