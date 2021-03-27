@@ -30,7 +30,11 @@ public class BoardService {
 	
 	
 	public List<BoardDTO> selBoardList(Criteria cri){
-		return mapper.selBoardList(cri);
+		Criteria cri_ = new Criteria();
+		
+		cri_.setB_category(cri.getB_category());
+		cri_.setPageNum((cri.getPageNum()-1) * 10);
+		return mapper.selBoardList(cri_);
 	}
 	
 	public BoardVO selBoardOne(BoardVO vo) {
@@ -58,5 +62,10 @@ public class BoardService {
 		
 		return mapper.plusHitCount(vo);
 	}
+	
+	public int pageTotal(Criteria cri) {
+		return mapper.pageTotal(cri);
+	}
+	
 
 }

@@ -18,6 +18,8 @@
 		inner join t_user B
 		on A.u_pk = B.u_pk
 		where b_category = #{b_category}
+		order by b_seq desc
+		limit #{pageNum} , #{amount}
 	</select>
 	
 	<select id="selBoardOne" resultType="BoardVO">
@@ -43,6 +45,13 @@
 		b_content = #{b_content} 
 		where b_pk = #{b_pk}
 	</update>
+	
+	
+	<select id="pageTotal" resultType="_int">
+		select count(*) from t_board
+		where b_category = #{b_category}
+		and b_pk > 0 
+	</select>
 	
 </mapper>  
 

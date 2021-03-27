@@ -1,0 +1,36 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("PageDTO")
+public class PageDTO {
+	
+	
+	private int endPage;
+	private int startPage;
+	private boolean prev, next;
+	
+	private int pageTotal;
+	private Criteria cri;
+	
+	private int realStart;
+	private int realEnd;
+	
+	
+	PageDTO(Criteria cri , int pageTotal){
+		this.cri = cri;
+		this.pageTotal = pageTotal;
+		
+		this.endPage = (int)(Math.ceil(cri.getPageNum() /10.0) * 10);
+		this.startPage = this.endPage - 9;
+	}
+	
+
+}
+
+
+
+
+
+
+

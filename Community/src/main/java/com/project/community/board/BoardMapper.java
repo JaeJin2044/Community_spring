@@ -17,4 +17,5 @@ public interface BoardMapper {
 	int delBoard(BoardVO vo);
 	int plusHitCount(BoardVO vo);
 	void updBoard(BoardVO vo);
+	int pageTotal(Criteria cri);
 }

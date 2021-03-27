@@ -35,9 +35,40 @@
 			</c:forEach>
 		</tbody>
 	</table>
+		<div class="pageContainer">
+			<ul class="pagination">
+				<c:if test="${page.prev}">
+					<li>
+						<a href="/board/list?pageNum=${page.startPage-1}&b_category=${param.b_category}"  aria-label="Previous">
+						 <span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+				</c:if>
+				<c:forEach var="num" begin="${page.startPage}" end="${page.endPage}">
+					<li>
+						<a href="/board/list?pageNum=${num}&b_category=${param.b_category}">
+							${num}
+						</a>
+					</li>
+				</c:forEach>
+				<c:if test="${page.next}">
+					<li>
+						<a href="/board/list?pageNum=${page.endPage+1}&b_category=${param.b_category}">
+						 <span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</c:if>
+			</ul>
+		</div>
+	 
 	<c:if test="${param.b_category != null && loginUser.u_pk > 0 }">
 		<a href="/board/write?b_category=${param.b_category}" class="btn btn-primary" style="float:right;">
 		글쓰기
 		</a>
 	</c:if>
+	
+	
+	
+	
+	
 </section>

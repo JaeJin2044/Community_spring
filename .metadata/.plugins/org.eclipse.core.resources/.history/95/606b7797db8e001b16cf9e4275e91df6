@@ -1,0 +1,16 @@
+package com.project.community.domain;
+
+import org.apache.ibatis.type.Alias;
+
+@Alias("PageDTO")
+public class PageDTO {
+	
+	
+	private int endPage;
+	private int startPage;
+	
+	private boolean prev, next;
+	
+	
+
+}

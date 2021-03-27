@@ -13,6 +13,7 @@ import com.project.community.Const;
 import com.project.community.domain.BoardDTO;
 import com.project.community.domain.BoardVO;
 import com.project.community.domain.Criteria;
+import com.project.community.domain.PageDTO;
 
 @RequestMapping("/board")
 @Controller
@@ -23,9 +24,17 @@ public class BoardController {
 	
 	@GetMapping("/list")
 	public void list(Criteria cri,Model model) {
-		System.out.println(cri.getB_category());
+		System.out.println("카테고리 : "+cri.getB_category());
+		System.out.println("pageNuM : "+cri.getPageNum());
+		System.out.println("amount: "+cri.getAmount());
+		
+		int pageTotal = service.pageTotal(cri);
+		
 		List<BoardDTO> list = service.selBoardList(cri);
+		
 		model.addAttribute(Const.KEY_LIST, list);
+		model.addAttribute(Const.KEY_PAGE, new PageDTO(cri,pageTotal));
+		
 	}
 	
 	@GetMapping("/detail")
