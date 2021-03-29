@@ -12,6 +12,32 @@ public class Criteria {
 	//보여줄 게시물 수 
 	private int amount;
 	
+	
+	//검색어
+	private String keyword;
+	//검색 타입
+	private String type;
+	
+	
+	
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	
+	
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	//기본 생성자
 	public Criteria(){
 		this("1",1,10);

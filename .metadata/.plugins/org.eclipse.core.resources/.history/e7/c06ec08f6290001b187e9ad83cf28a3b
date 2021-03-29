@@ -1,0 +1,3 @@
+
+
+var modalCloseEl = document.querySelector('.modal-close');

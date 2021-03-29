@@ -21,12 +21,13 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="com.project.community.domain.BoardVO"/>
-    <fullyQualifiedTypeName name="org.apache.ibatis.type.Alias"/>
     <fullyQualifiedTypeName name="com.project.community.domain.BoardDTO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.project.community.domain.Criteria"/>
     <fullyQualifiedTypeName name="com.project.community.Const"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.project.community.utils.SecurityUtils"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.type.Alias"/>
+    <fullyQualifiedTypeName name="com.project.community.domain.Criteria"/>
+    <fullyQualifiedTypeName name="org.apache.commons.digester.xmlrules.CircularIncludeException"/>
 </qualifiedTypeNameHistroy>

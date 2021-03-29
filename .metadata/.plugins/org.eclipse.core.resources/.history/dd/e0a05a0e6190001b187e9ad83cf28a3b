@@ -1,0 +1,67 @@
+
+.reply-container{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.writeBtn{
+	text-align: right;
+}
+
+.btn {
+	background-color: gray; /* Green */
+	border: none;
+	color: white;
+	margin-right: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+}
+.reply-container h3{
+
+  font-size: 30px;
+  font-weight: 700;
+}
+.reply-container .reply-list{
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.reply-container .reply-list li{
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding-right: 30px;
+  text-align: center;
+}
+.reply-container .reply-list li .reply-title{
+  padding: 0 15px;
+  width: 100px;
+}
+.reply-container .reply-list li .reply-content{
+  padding: 0 15px;
+  width: 500px;
+}
+.reply-container .reply-list li .reply-regdate{
+  padding: 0 15px;
+  width: 200px;
+}
+.reply-container .reply-list li .reply-btn-list{
+  display: flex;
+}
+.reply-container .reply-list li .btn{
+  background-color: gray; /* Green */
+  border: none;
+  color: white;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+
+.reply-container .reply-list img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

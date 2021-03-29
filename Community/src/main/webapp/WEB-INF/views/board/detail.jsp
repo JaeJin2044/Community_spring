@@ -45,6 +45,33 @@
 					<a href="/board/list?b_category=${data.b_category}" class="btn btn-sm btn-primary">리스트</a>
 				</div>
 			</form>
+			<div class="reply-container">
+			    <h3>댓글</h3>
+			    <hr>
+			    <div class="writeBtn">
+			    	<button class="btn" id="writeBtn">글쓰기</button>
+			    </div>
+			    
+			    <ul class="reply-list" id="reply-list">
+			      
+			    </ul>
+		  </div>
 		</div>
 	</article>
+		<div class="writeModal">
+			<form class="writeModal-form">
+				<div>
+					<div><span class="modal-close">X</span></div>
+					<input class="modal-writer" type="text" name="" placeholder="이재진">
+				</div>
+				<div>
+					<textarea class="modal-content" rows="5" name="b_content" id="b_content">			
+					</textarea>
+				</div>
+				<button class="btn" >글쓰기</button>
+			</form>	
+		</div>
 </section>
+
+
+

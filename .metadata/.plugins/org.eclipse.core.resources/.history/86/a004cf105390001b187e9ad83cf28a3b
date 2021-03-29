@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.community.board.BoardMapper">
+
+	<insert id="insBoard">
+		insert into t_board 
+		(b_title,b_content,b_seq,b_category,b_writer,u_pk)
+		select #{b_title},#{b_content},IFNULL(MAX(b_seq),0)+1, #{b_category}, #{b_writer}, #{u_pk}
+		from t_board 
+		where b_category = #{b_category}
+	</insert>	
+	
+	<select id="selBoardList" resultType="BoardDTO">
+		select A.u_pk,A.b_pk,A.b_seq ,A.b_title ,DATE_FORMAT(A.b_regdate , '%y-%m-%d') as b_regdate,A.b_hitcounts,B.u_name as b_writer,B.u_profileImg 
+		from  
+		t_board A
+		inner join t_user B
+		on A.u_pk = B.u_pk
+		where b_category = #{b_category}
+		order by b_seq desc
+		limit #{pageNum} , #{amount}
+	</select>
+	
+	<select id="selBoardOne" resultType="BoardVO">
+		select b_pk,b_title,u_pk,b_content,b_hitcounts,b_seq,b_category,b_writer,DATE_FORMAT(b_regdate , '%y-%m-%d') as b_regdate 
+		from t_board
+		where b_pk = #{b_pk}
+	</select>
+	
+	<delete id="delBoard">
+		delete from t_board
+		where b_pk = #{b_pk}
+	</delete>
+	
+	<update id="plusHitCount">
+		update t_board
+		set b_hitcounts = b_hitcounts+1
+		where b_pk = #{b_pk}
+	</update>
+	
+	<update id="updBoard">
+		update t_board 
+		set b_title = #{b_title} ,
+		b_content = #{b_content} 
+		where b_pk = #{b_pk}
+	</update>
+	
+	
+	<select id="pageTotal" resultType="_int">
+		select count(*) from t_board
+		where b_category = #{b_category}
+		and b_pk > 0 
+		<if test=" keyword != ''">
+			<choose>
+				<when test=" type == 'T'.toString()">
+					AND b_title like '%${keyword}%'
+				</when>
+				<when test=" type == 'C'.toString()">
+					AND b_content like '%${keyword}%'
+				</when>
+				<when test=" type == 'W'.toString()">
+					AND b_writer like '%${keyword}%'
+				</when>
+				<when test=" type == 'TC'.toString()">
+					AND (b_title like '%${keyword}%' or b_content like '%${keyword}%')
+				</when>		
+				<when test=" type == 'TW'.toString()">
+					AND (b_title like '%${keyword}%' or b_writer like '%${keyword}%')
+				</when>		
+				<when test=" type == 'TWC'.toString()">
+					AND (b_title like '%${keyword}%' or b_writer like '%${keyword}%'
+					or b_content like '%${keyword}%')
+				</when>		
+			</choose>		
+		</if>
+	</select>
+	
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+
+var writeModalEl = document.querySelector('.writeModal');
+var modalCloseEl = document.querySelector('.modal-close');
+var writeBtnEl = document.querySelector('#writeBtn');
+
+if(writeBtnEl){
+	writeBtnEl.addEventListener('click',function(){
+		writeBtnEl.style.display='flex';
+	})
+}
+
+
+
+
+
+
+if(modalCloseEl){
+	modalCloseEl.addEventListener('click',function(){
+		modalElem.classList.add('hide');
+	})
+}
+
+
+
+
+
+

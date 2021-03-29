@@ -1,0 +1,11 @@
+
+var writeModalEl = document.querySelector('.writeModal');
+var modalCloseEl = document.querySelector('.modal-close');
+
+
+if(modalCloseEl){
+	
+	modalCloseEl.addEventListener('click',function(){
+		modalElem.classList.add('hide');
+	})
+}

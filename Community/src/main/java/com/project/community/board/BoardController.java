@@ -24,11 +24,15 @@ public class BoardController {
 	
 	@GetMapping("/list")
 	public void list(Criteria cri,Model model) {
+		System.out.println("=======");
 		System.out.println("카테고리 : "+cri.getB_category());
 		System.out.println("pageNuM : "+cri.getPageNum());
 		System.out.println("amount: "+cri.getAmount());
+		System.out.println("keyword : "+cri.getKeyword());
+		System.out.println("type : "+cri.getType());
 		
 		int pageTotal = service.pageTotal(cri);
+		System.out.println("pageTotal="+pageTotal);
 		
 		List<BoardDTO> list = service.selBoardList(cri);
 		

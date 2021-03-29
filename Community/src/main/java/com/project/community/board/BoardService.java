@@ -34,6 +34,9 @@ public class BoardService {
 		
 		cri_.setB_category(cri.getB_category());
 		cri_.setPageNum((cri.getPageNum()-1) * 10);
+		cri_.setKeyword(cri.getKeyword());
+		cri_.setType(cri.getType());
+		
 		return mapper.selBoardList(cri_);
 	}
 	

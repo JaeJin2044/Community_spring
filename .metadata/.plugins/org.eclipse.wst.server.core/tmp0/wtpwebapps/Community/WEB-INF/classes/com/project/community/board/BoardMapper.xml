@@ -17,7 +17,30 @@
 		t_board A
 		inner join t_user B
 		on A.u_pk = B.u_pk
-		where b_category = #{b_category}
+		where b_category = #{b_category} 
+		<if test=" keyword != ''">
+			<choose>
+				<when test=" type == 'T'.toString()">
+					AND b_title like '%${keyword}%'
+				</when>
+				<when test=" type == 'C'.toString()">
+					AND b_content like '%${keyword}%'
+				</when>
+				<when test=" type == 'W'.toString()">
+					AND b_writer like '%${keyword}%'
+				</when>
+				<when test=" type == 'TC'.toString()">
+					AND (b_title like '%${keyword}%' or b_content like '%${keyword}%')
+				</when>		
+				<when test=" type == 'TW'.toString()">
+					AND (b_title like '%${keyword}%' or b_writer like '%${keyword}%')
+				</when>		
+				<when test=" type == 'TWC'.toString()">
+					AND (b_title like '%${keyword}%' or b_writer like '%${keyword}%'
+					or b_content like '%${keyword}%')
+				</when>		
+			</choose>		
+		</if>
 		order by b_seq desc
 		limit #{pageNum} , #{amount}
 	</select>
@@ -51,6 +74,29 @@
 		select count(*) from t_board
 		where b_category = #{b_category}
 		and b_pk > 0 
+		<if test=" keyword != ''">
+			<choose>
+				<when test=" type == 'T'.toString()">
+					AND b_title like '%${keyword}%'
+				</when>
+				<when test=" type == 'C'.toString()">
+					AND b_content like '%${keyword}%'
+				</when>
+				<when test=" type == 'W'.toString()">
+					AND b_writer like '%${keyword}%'
+				</when>
+				<when test=" type == 'TC'.toString()">
+					AND (b_title like '%${keyword}%' or b_content like '%${keyword}%')
+				</when>		
+				<when test=" type == 'TW'.toString()">
+					AND (b_title like '%${keyword}%' or b_writer like '%${keyword}%')
+				</when>		
+				<when test=" type == 'TWC'.toString()">
+					AND (b_title like '%${keyword}%' or b_writer like '%${keyword}%'
+					or b_content like '%${keyword}%')
+				</when>		
+			</choose>		
+		</if>
 	</select>
 	
 </mapper>  

@@ -1,0 +1,13 @@
+
+var writeModalEl = document.querySelector('.writeModal');
+var modalCloseEl = document.querySelector('.modal-close');
+var writeBtnEl = document.querySelector('#writeBtn');
+
+if(modalCloseEl){
+	modalCloseEl.addEventListener('click',function(){
+		modalElem.classList.add('hide');
+	})
+}
+
+
+
